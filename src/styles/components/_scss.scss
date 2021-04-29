@@ -1,0 +1,45 @@
+.main {
+    @include flex-center;
+    @include fullscreen;
+
+    text-align: center;
+    background:  radial-gradient(lighten($c-gradient, 25%), $c-gradient);
+
+    .form {
+        @include flex-column-center-y;
+        &-title {
+            position: absolute;
+            margin-top: -3rem;
+        }
+
+        &-msg {
+            position: absolute;
+            margin-top: -2.5rem;
+        }
+
+        &-btn {
+            font-size: 20px;
+            padding: 1rem;
+            cursor: pointer;
+        }
+    }
+
+    .container {
+        @include flex-column-center-y;
+        position: absolute;
+        pointer-events: none;
+        box-sizing: border-box;
+        padding: 2rem;
+        max-width: 600px;
+        &-insult {
+            font-size: $h3;
+        }
+    }
+}
+
+.btn {
+    padding: 1rem;
+    border-radius: $rounded;
+    background: $white02;
+    cursor: pointer;
+}

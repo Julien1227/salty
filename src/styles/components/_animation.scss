@@ -1,0 +1,70 @@
+.container {
+    pointer-events: none;
+    &-insult {
+        opacity: 0;
+        transform: scale(0) rotate(-360deg);
+        transition: $t-slow;
+        &-btn {
+            opacity: 0;
+            transform: scale(0) translateY(10px);
+            transition: $t-slow;
+        }
+    }
+}
+
+
+.form-msg {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: $t-slow;
+}
+
+.form-title {
+    transform: translateY(0px);
+    opacity: 1;
+    transition: $t-fast;
+}
+
+
+.form {
+    opacity: 1;
+    transform: rotate(-360) scale(1);
+    transition: $t-slow;
+}
+
+.main {
+    &.form-focus {
+        .form-title {
+            transform: translateY(-20px);
+            opacity: 0;
+        }
+    }
+
+    &.show-insult {
+        .form {
+            transform: rotate(0) scale(0);
+            opacity: 0;
+        }
+
+        .container {
+            opacity: 1;
+            pointer-events: inherit;
+            &-insult {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+    
+                &-btn {
+                    transform: scale(1) translateY(0px);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &.show-msg {
+        .form-msg {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+}
